@@ -11,13 +11,13 @@ public class Equipment {
     private Long id;
     private String numberPosition;
     private String name;
-    private boolean isProperly;
+    private byte isProperly;
 
 
     public Equipment() {
     }
 
-    public Equipment(String numberPosition, String name, boolean isProperly) {
+    public Equipment(String numberPosition, String name, byte isProperly) {
         this.numberPosition = numberPosition;
         this.name = name;
         this.isProperly = isProperly;
@@ -48,11 +48,11 @@ public class Equipment {
         this.numberPosition = numberPosition;
     }
 
-    public boolean isCondition() {
+    public byte getIsProperly() {
         return isProperly;
     }
 
-    public void setCondition(boolean isProperly) {
+    public void setIsProperly(byte isProperly) {
         this.isProperly = isProperly;
     }
 

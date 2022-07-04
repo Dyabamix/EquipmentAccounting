@@ -37,7 +37,7 @@ public class EquipmentDAOimp implements EquipmentDAO{
     @Override
     public List<Equipment> getAllEquipments() {
 
-        return entityManager.createQuery("from Equipment", Equipment.class).getResultList();
+        return entityManager.createQuery("from Equipment ", Equipment.class).getResultList();
     }
 
     @Override

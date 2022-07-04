@@ -22,7 +22,7 @@ import java.util.Properties;
 @PropertySource("classpath:db.properties")
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan(value = "java")
+@ComponentScan(value = "web")
 public class AppConfig {
 
     private Environment env;
@@ -48,7 +48,7 @@ public class AppConfig {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
 
         emf.setDataSource(getDataSource());
-        emf.setPackagesToScan("models");
+        emf.setPackagesToScan("web.models");
         emf.setJpaVendorAdapter(jpaVendorAdapter);
         emf.setJpaProperties(getProperties());
 

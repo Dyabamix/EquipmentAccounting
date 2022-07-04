@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
-
+<H1>Русский язык!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</H1>
+<table>
+    <tr th:each="equipment: ${equipments}">
+        <td th: th:text="${equipment.getId()}"></td>
+        <td th:text="${equipment.getNumberPosition()}"></td>
+        <td th:text="${equipment.getName()}"></td>
+        <td th:text="${equipment.isCondition()}"></td>
+    </tr>
+</table>
 
 </body>
 </html>
