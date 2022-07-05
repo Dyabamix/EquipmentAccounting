@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<H1>Русский язык!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</H1>
+<h1>Р“РґРµ СЂСѓСЃСЃРєРёР№ СЏР·С‹Рє?</h1>
+
+
+<form th:action="@{/create}" th:object="${equipment}" method="post" >
+    <input type="hidden" th:field="*{id}" th:value="*{getId()}">
+
+    <label for="name" style="display: block">Number position</label>
+    <input type="text" id="name" style="display: block" th:field="*{numberPosition}" th:value="*{getNumberPosition()}">
+
+    <label for="LastName" style="display: block">Name</label>
+    <input type="text" id="LastName" style="display: block" th:field="*{name}" th:value="*{getName()}"
+           required>
+
+    <label for="age" style="display: block">isProperly</label>
+    <input type="number" id="age" style="display: block" th:field="*{isProperly}" th:value="*{getIsProperly()}" required>
+
+    <button type="submit" style="display: block; margin-top: 15px; width: 178px" th:text="Create"></button>
+</form>
+
 <table>
-    <tr th:each="equipment: ${equipments}">
+    <tr  th:each="equipment: ${equipments}">
         <td th: th:text="${equipment.getId()}"></td>
         <td th:text="${equipment.getNumberPosition()}"></td>
         <td th:text="${equipment.getName()}"></td>
-        <td th:text="${equipment.isCondition()}"></td>
+        <td th:text="${equipment.getIsProperly()}"></td>
     </tr>
 </table>
-
 </body>
 </html>
