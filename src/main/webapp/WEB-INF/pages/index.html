@@ -25,11 +25,11 @@
 </form>
 
 <table>
-    <tr  th:each="equipment: ${equipments}">
-        <td th: th:text="${equipment.getId()}"></td>
-        <td th:text="${equipment.getNumberPosition()}"></td>
-        <td th:text="${equipment.getName()}"></td>
-        <td th:text="${equipment.getIsProperly()}"></td>
+    <tr  th:each="equipment_item: ${equipments}">
+        <td th: th:text="${equipment_item.getId()}"></td>
+        <td th:text="${equipment_item.getNumberPosition()}"></td>
+        <td th:text="${equipment_item.getName()}"></td>
+        <td th:text="${equipment_item.getIsProperly()}"></td>
     </tr>
 </table>
 </body>

@@ -3,21 +3,21 @@ package web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.web.bind.annotation.RequestMapping;
 import web.models.equipmentAccounting.Equipment;
 import web.service.ServiceEquipment;
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
 
 
 @Controller
+@RequestMapping("/")
 public class equipmentController {
 
     private final ServiceEquipment serviceEquipment;
@@ -28,12 +28,9 @@ public class equipmentController {
     }
 
     @GetMapping(value = "/")
-    public String getListEquipmentsAndDeleteEquipment(ModelMap modelMap,
-                                                      Model model) {
+    public String getListEquipmentsAndDeleteEquipment(Model model) {
 
-
-        List<Equipment> equipments = serviceEquipment.getAllEquipments();
-        modelMap.addAttribute("equipments", equipments);
+        model.addAttribute("equipments", serviceEquipment.getAllEquipments());
         model.addAttribute("equipment", new Equipment());
 
         return "index";

@@ -56,4 +56,36 @@ public class Equipment {
         this.isProperly = isProperly;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Equipment)) return false;
+
+        Equipment equipment = (Equipment) o;
+
+        if (isProperly != equipment.isProperly) return false;
+        if (id != null ? !id.equals(equipment.id) : equipment.id != null) return false;
+        if (numberPosition != null ? !numberPosition.equals(equipment.numberPosition) : equipment.numberPosition != null)
+            return false;
+        return name != null ? name.equals(equipment.name) : equipment.name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (numberPosition != null ? numberPosition.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + isProperly;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipment{" +
+                "id=" + id +
+                ", numberPosition='" + numberPosition + '\'' +
+                ", name='" + name + '\'' +
+                ", isProperly=" + isProperly +
+                '}';
+    }
 }
